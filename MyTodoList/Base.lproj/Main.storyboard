@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Todo View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TodoViewController" customModule="MyTodoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8sx-MY-80k">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bbM-wp-Uhc">
+                                    <size key="itemSize" width="412" height="95"/>
+                                    <size key="headerReferenceSize" width="150" height="60"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodoListCell" id="Zea-Dk-AcJ" customClass="TodoListCell" customModule="MyTodoList" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="60" width="412" height="95"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="W2g-TF-6AE">
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="95"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aki-A7-EAT" userLabel="CheckButton">
+                                                    <rect key="frame" x="20" y="30" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="1na-Ie-7Ic"/>
+                                                        <constraint firstAttribute="width" constant="35" id="a9s-5p-zfd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <state key="normal" image="circle" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" weight="bold"/>
+                                                    </state>
+                                                    <state key="selected" image="circle.fill" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="checkButtonClick:" destination="Zea-Dk-AcJ" eventType="touchUpInside" id="95C-0r-jjy"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👻 Weekly iOS Meeting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKE-iv-gSH" userLabel="Description">
+                                                    <rect key="frame" x="71" y="37" width="276" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeB-Y3-VQe" userLabel="DeleteButton">
+                                                    <rect key="frame" x="357" y="30" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="4Q3-6z-Jgm"/>
+                                                        <constraint firstAttribute="width" constant="35" id="eWK-W2-TIz"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" image="xmark.circle.fill" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteButtonClick:" destination="Zea-Dk-AcJ" eventType="touchUpInside" id="qex-Rb-yb9"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJY-jB-1hE">
+                                                    <rect key="frame" x="65" y="47" width="250" height="1"/>
+                                                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="Q1w-bs-7sC"/>
+                                                        <constraint firstAttribute="height" constant="1" id="QwX-JI-xLz"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="UeB-Y3-VQe" secondAttribute="trailing" constant="20" id="3ja-08-5LK"/>
+                                                <constraint firstItem="UeB-Y3-VQe" firstAttribute="leading" secondItem="sKE-iv-gSH" secondAttribute="trailing" constant="10" id="4ea-c1-Iap"/>
+                                                <constraint firstItem="aki-A7-EAT" firstAttribute="leading" secondItem="W2g-TF-6AE" secondAttribute="leading" constant="20" id="5IK-M5-6i4"/>
+                                                <constraint firstItem="UeB-Y3-VQe" firstAttribute="centerY" secondItem="W2g-TF-6AE" secondAttribute="centerY" id="DQj-N1-PIz"/>
+                                                <constraint firstItem="gJY-jB-1hE" firstAttribute="centerY" secondItem="W2g-TF-6AE" secondAttribute="centerY" id="eTW-dx-012"/>
+                                                <constraint firstItem="sKE-iv-gSH" firstAttribute="leading" secondItem="aki-A7-EAT" secondAttribute="trailing" constant="16" id="hdL-pc-AUW"/>
+                                                <constraint firstItem="sKE-iv-gSH" firstAttribute="centerY" secondItem="W2g-TF-6AE" secondAttribute="centerY" id="srI-GX-oe6"/>
+                                                <constraint firstItem="aki-A7-EAT" firstAttribute="centerY" secondItem="W2g-TF-6AE" secondAttribute="centerY" id="wF5-Fb-ec5"/>
+                                                <constraint firstItem="gJY-jB-1hE" firstAttribute="leading" secondItem="aki-A7-EAT" secondAttribute="trailing" constant="10" id="xiw-bo-wxY"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="412" height="95"/>
+                                        <connections>
+                                            <outlet property="checkButton" destination="aki-A7-EAT" id="FA1-h1-6BT"/>
+                                            <outlet property="deleteButton" destination="UeB-Y3-VQe" id="oTm-QX-D65"/>
+                                            <outlet property="descriptionLabel" destination="sKE-iv-gSH" id="aeO-pz-MpK"/>
+                                            <outlet property="strikeThroughView" destination="gJY-jB-1hE" id="EEO-FU-S3u"/>
+                                            <outlet property="strikeThroughWidth" destination="Q1w-bs-7sC" id="ExS-aa-Dfs"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodoListHeaderView" id="mPD-tp-HyH" customClass="TodoListHeaderView" customModule="MyTodoList" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My TodoList" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHi-0g-NLw">
+                                            <rect key="frame" x="20" y="14" width="194" height="32"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bHi-0g-NLw" firstAttribute="leading" secondItem="mPD-tp-HyH" secondAttribute="leading" constant="20" id="6Fw-dt-gED"/>
+                                        <constraint firstAttribute="trailing" secondItem="bHi-0g-NLw" secondAttribute="trailing" constant="200" id="Cgt-cC-Fax"/>
+                                        <constraint firstItem="bHi-0g-NLw" firstAttribute="centerY" secondItem="mPD-tp-HyH" secondAttribute="centerY" id="O1y-Lz-oqQ"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="sectionLabel" destination="bHi-0g-NLw" id="3Ua-Yq-oKh"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="pqw-IY-K38"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uNl-fY-2c2"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSn-Fs-XYu">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i want to..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GIt-Q1-agk">
+                                        <rect key="frame" x="30" y="13" width="250" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="MsM-tY-lCO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qo-vs-Zbh">
+                                        <rect key="frame" x="336" y="16" width="28" height="28"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="plus" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e4r-Ni-G2J"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8Qo-vs-Zbh" secondAttribute="trailing" constant="50" id="0MO-Bo-RZv"/>
+                                    <constraint firstAttribute="height" constant="60" id="LFN-oq-aUO"/>
+                                    <constraint firstItem="8Qo-vs-Zbh" firstAttribute="centerY" secondItem="bSn-Fs-XYu" secondAttribute="centerY" id="VEM-2a-uPc"/>
+                                    <constraint firstItem="GIt-Q1-agk" firstAttribute="centerY" secondItem="bSn-Fs-XYu" secondAttribute="centerY" id="e0u-gc-qiH"/>
+                                    <constraint firstItem="GIt-Q1-agk" firstAttribute="leading" secondItem="bSn-Fs-XYu" secondAttribute="leading" constant="30" id="mrk-d6-WbD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bSn-Fs-XYu" secondAttribute="trailing" id="4fx-MY-Q2T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8sx-MY-80k" secondAttribute="bottom" id="7w4-Kp-iuL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bSn-Fs-XYu" secondAttribute="bottom" id="dcA-6v-nSa"/>
+                            <constraint firstItem="8sx-MY-80k" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kJa-eP-eSj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="8sx-MY-80k" secondAttribute="leading" id="s3Q-is-epn"/>
+                            <constraint firstItem="8sx-MY-80k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="shB-nv-4XF"/>
+                            <constraint firstItem="bSn-Fs-XYu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="slm-AV-bhr"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="TAW-5M-OMg" appends="YES" id="rbA-dz-rzD"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="8Qo-vs-Zbh" id="QuU-aV-SYu"/>
+                        <outlet property="collectionView" destination="8sx-MY-80k" id="MG8-WC-hJC"/>
+                        <outlet property="inputTextBottom" destination="dcA-6v-nSa" id="ARn-n1-T25"/>
+                        <outlet property="inputTextField" destination="GIt-Q1-agk" id="Q8C-ds-Kad"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TAW-5M-OMg">
+                    <connections>
+                        <action selector="tabBG:" destination="BYZ-38-t0r" id="nX4-0T-HWJ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="63.616071428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
